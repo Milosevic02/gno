@@ -1,0 +1,16 @@
+name: Run Go tests
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  trigger-workflow:
+    uses: ./.github/workflows/main_template.yml
+    with:
+      modulepath: "./src"
+      go-version: "1.22.x"
+      tests-extra-args: "-v"
+    secrets:
+      codecov-token: ${{ secrets.CODECOV_TOKEN }}
