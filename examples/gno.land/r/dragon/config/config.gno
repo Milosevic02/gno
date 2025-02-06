@@ -14,7 +14,7 @@ var (
 )
 
 func init() {
-	main = "g1x9qyf6f34v2g52k4q5smn5tctmj3hl2kj7l2ql"
+	main = "g1yx5hqxgt990yyqdet6qys0cuts22ux52frxeaa"
 }
 
 func Address() std.Address {
