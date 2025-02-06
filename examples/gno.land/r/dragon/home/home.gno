@@ -32,7 +32,7 @@ var (
 
 func init() {
 	textArt = renderTextArt()
-	aboutMe = "I am a final-year student of Applied Software Engineering at the Faculty of Technical Sciences in Novi Sad, with a strong focus on blockchain and Web3 technologies. Since attending the Web3 Camp in Petnica, I have been actively exploring decentralized systems, smart contract development, and blockchain infrastructure. Additionally, I have experience in AI, particularly in NLP and neural networks. I have competed in and won multiple hackathons, including ETH Sofia, where I secured four sponsor bounties. Passionate about contributing to the blockchain ecosystem, I am eager to collaborate on innovative projects and continue expanding my expertise.\n"
+	aboutMe = "I am a final-year student of Applied Software Engineering at the Faculty of Technical Sciences in Novi Sad, with a strong focus on blockchain and Web3 technologies.\n\n Since attending the Web3 Camp in Petnica, I have been actively exploring decentralized systems, smart contract development, and blockchain infrastructure.\n\n Additionally, I have experience in AI, particularly in NLP and neural networks. I have competed in and won multiple hackathons, including ETH Sofia, where I secured four sponsor bounties. Passionate about contributing to the blockchain ecosystem, I am eager to collaborate on innovative projects and continue expanding my expertise.\n\n"
 	comingSoon = "![Coming Soon](https://img.freepik.com/free-vector/abstract-grunge-style-coming-soon-with-black-splatter_1017-26690.jpg)\n"
 
 	socialLinks = map[string]SocialLink{
@@ -152,7 +152,7 @@ func renderTextArt() string {
 
 func renderSocialLinks() string {
 	var sb strings.Builder
-	sb.WriteString("## Links\n\n")
+	sb.WriteString("## 🔗 Links\n\n")
 	sb.WriteString("You can find me here:\n\n")
 	sb.WriteString(ufmt.Sprintf("- 🐙 [GitHub](%s) - %s\n", socialLinks["GitHub"].URL, socialLinks["GitHub"].Text))
 	sb.WriteString(ufmt.Sprintf("- 👜 [LinkedIn](%s) - %s\n", socialLinks["LinkedIn"].URL, socialLinks["LinkedIn"].Text))
