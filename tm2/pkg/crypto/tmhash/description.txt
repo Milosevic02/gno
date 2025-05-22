@@ -1,0 +1,6 @@
+
+# Hash Pool Implementation for Memory Optimization
+
+This PR improves performance by implementing a sync.Pool for hash objects in tmhash package. Hash calculations, especially in the mempool, create many short-lived objects that increase GC pressure. By reusing hash objects, we reduce memory allocations while maintaining the same functionality.
+
+The implementation preserves the existing API entirely, ensuring all current code continues to work without modification. Tests confirm identical behavior with better performance characteristics under load.

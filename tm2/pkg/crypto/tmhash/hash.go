@@ -11,7 +11,7 @@ const (
 	BlockSize = sha256.BlockSize
 )
 
-// HashPool provides a pool of hash.Hash instances to reduce memory allocations
+// hashPool provides a pool of hash.Hash instances to reduce memory allocations
 var hashPool = sync.Pool{
 	New: func() interface{} {
 		return sha256.New()
@@ -21,12 +21,6 @@ var hashPool = sync.Pool{
 // New returns a new hash.Hash from the pool.
 func New() hash.Hash {
 	return hashPool.Get().(hash.Hash)
-}
-
-// ReturnHash returns a hash.Hash to the pool.
-func ReturnHash(h hash.Hash) {
-	h.Reset()
-	hashPool.Put(h)
 }
 
 // Sum returns the SHA256 of the bz.
@@ -86,12 +80,6 @@ var truncatedHashPool = sync.Pool{
 // NewTruncated returns a new hash.Hash from the truncated pool.
 func NewTruncated() hash.Hash {
 	return truncatedHashPool.Get().(hash.Hash)
-}
-
-// ReturnTruncatedHash returns a truncated hash to the pool.
-func ReturnTruncatedHash(h hash.Hash) {
-	h.Reset()
-	truncatedHashPool.Put(h)
 }
 
 // SumTruncated returns the first 20 bytes of SHA256 of the bz.
